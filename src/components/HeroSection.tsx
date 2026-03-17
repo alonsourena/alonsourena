@@ -9,6 +9,14 @@ import { TailwindCSSIcon } from './icons/tailwindcss'
 import { TanStackIcon } from './icons/tanstack'
 import { TypeScriptIcon } from './icons/typescript'
 import { XIcon } from './icons/x'
+import {
+  ArrowRight02Icon,
+  ComputerTerminal01Icon,
+  DatabaseLightningIcon,
+  Download01Icon,
+  GalaxyIcon,
+} from '@hugeicons/core-free-icons'
+import { HugeiconsIcon } from '@hugeicons/react'
 
 const marqueeItems = [
   { id: 1, icon: ReactIcon },
@@ -41,7 +49,7 @@ function MarqueeItem({
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-[calc(100vh-80px)] items-center justify-center px-6 pt-12 pb-32 lg:px-20">
+    <section className="relative flex min-h-dvh items-center justify-center px-6 py-32 lg:px-20">
       {/* Background blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-primary/5 blur-[120px]" />
@@ -71,8 +79,8 @@ export function HeroSection() {
                   Full Stack Developer
                 </p>
                 <p className="text-base text-slate-500 dark:text-slate-400 max-w-lg leading-relaxed">
-                  Architecting scalable digital solutions with a focus on
-                  high-performance architectures and intuitive user experiences.
+                  Building robust web applications from database to UI, turning
+                  complex problems into clean, maintainable code.
                 </p>
 
                 {/* Social links */}
@@ -142,30 +150,20 @@ export function HeroSection() {
                         </span>
                         <span className="text-sm font-medium">Spaceware</span>
                       </div>
-                      <div className="size-8 rounded-full border border-primary/30 flex items-center justify-center">
-                        <span className="material-symbols-outlined text-primary text-sm">
-                          bolt
-                        </span>
-                      </div>
                     </div>
                   </div>
                 </div>
                 {/* Floating icons */}
                 <div className="absolute -top-6 -right-6 h-16 w-16 glass-panel rounded-2xl flex items-center justify-center text-primary shadow-xl">
-                  <span className="material-symbols-outlined text-3xl">
-                    terminal
-                  </span>
+                  <HugeiconsIcon icon={ComputerTerminal01Icon} />
                 </div>
                 <div className="absolute bottom-12 -left-8 h-14 w-14 glass-panel rounded-2xl flex items-center justify-center text-primary shadow-xl">
-                  <span className="material-symbols-outlined text-2xl">
-                    database
-                  </span>
+                  <HugeiconsIcon icon={GalaxyIcon} />
                 </div>
               </div>
             </div>
 
-            {/* Professional Path timeline */}
-            <ProffesionalPath />
+            <ProffesionalExperience />
           </div>
         </div>
       </div>
@@ -181,9 +179,27 @@ function FeaturedProjects() {
       </h3>
 
       <div className="flex flex-wrap gap-8 items-center">
-        <img src="/speedy-logistics.png" width={125} />
-        <img src="/speedy-logistics.png" width={125} />
-        <img src="/speedy-logistics.png" width={125} />
+        <a
+          href="https://speedylogisticscr.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/speedy-logistics.png" width={125} />
+        </a>
+        <a
+          href="https://www.black-shipping.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/black-shipping.png" width={125} />
+        </a>
+        <a
+          href="https://www.fastieboxcr.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/fastie-box.png" width={125} />
+        </a>
       </div>
     </div>
   )
@@ -218,22 +234,22 @@ function CallToAction() {
     <div className="flex flex-col sm:flex-row gap-4 mt-6">
       <button className="flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-4 text-base font-bold text-background-dark shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform">
         <span>Explore Portfolio</span>
-        <span className="material-symbols-outlined">arrow_forward</span>
+        <HugeiconsIcon icon={ArrowRight02Icon} />
       </button>
       <button className="flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 px-8 py-4 text-base font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
         <span>Download CV</span>
-        <span className="material-symbols-outlined">download</span>
+        <HugeiconsIcon icon={Download01Icon} />
       </button>
     </div>
   )
 }
 
-function ProffesionalPath() {
+function ProffesionalExperience() {
   return (
     <div className="w-full max-w-lg mx-auto lg:mx-0 lg:pl-8">
       <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-primary mb-10 flex items-center gap-3">
         <span className="h-px w-8 bg-primary" />
-        Professional Path
+        Professional Experience
       </h3>
       <div className="relative ml-4">
         <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-linear-to-b from-primary via-primary/20 to-transparent" />
@@ -290,7 +306,7 @@ function ProffesionalPath() {
         </div>
 
         {/* Entry 3 */}
-        <div className="relative pl-12">
+        {/* <div className="relative pl-12">
           <div className="absolute -left-1.25 top-1 size-3 rounded-full bg-primary/20 border border-primary/40" />
           <div className="flex flex-col gap-1">
             <span className="text-xs font-bold text-slate-500 tracking-widest uppercase">
@@ -303,7 +319,7 @@ function ProffesionalPath() {
               Pixel Perfect
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )
